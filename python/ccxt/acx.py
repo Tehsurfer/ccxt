@@ -135,7 +135,7 @@ class acx (Exchange):
             result[uppercase] = account
         return self.parse_balance(result)
 
-    def fetch_order_book(self, symbol, limit=None, params={}):
+    def fetch_order_book(self, symbol, limit=1000, params={}):
         self.load_markets()
         market = self.market(symbol)
         request = {
